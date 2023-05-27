@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.sb')
 @section('content')
 <main class="py-5">
       <div class="container">
@@ -65,7 +65,7 @@
                       <label for="country_id" class="col-md-3 col-form-label">Country</label>
                 
                       <div class="col-md-9">
-                        <select name="company_id" id="company_id" class="form-control">
+                        <select name="country_id" id="country_id" class="form-control">
 
                         @foreach($countries as $row)
                         <option value="{{$row->id}}" @if($row->id == old('countryName')) selected @endif>{{$row->countryName}}</option>

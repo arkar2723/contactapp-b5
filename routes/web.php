@@ -9,6 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/sb', function () {
+    return view('sb');
+});
+
 
 // companies
 Route::get('/companies', [CompanyController::class,'index'])->name('companies.index');

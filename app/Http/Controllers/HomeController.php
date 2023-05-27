@@ -27,8 +27,9 @@ class HomeController extends Controller
     public function index()
     {
         $contact = Contact::count();
+        $contacts = Contact::all();
         $company = Company::count();
         $country = Country::count();
-        return view('home', compact('contact','company','country'));
+        return view('home', compact('contact','contacts','company','country'));
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.sb')
 @section('content')
 <main class="py-5">
       <div class="container">
@@ -49,7 +49,7 @@
                     <div class="form-group row">
                       <label for="company_id" class="col-md-3 col-form-label">Company</label>
                       <div class="col-md-9">
-                        <p class="form-control-plaintext text-muted">{{$companies->name}}</p>
+                        <p class="form-control-plaintext text-muted">{{$contacts->company->name}}</p>
                       </div>
                     </div>
 

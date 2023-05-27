@@ -44,8 +44,8 @@ class ContactController extends Controller
 
     public function show($id){
         $contacts = Contact::findOrFail($id);
-        $companies = Company::findOrFail($id);
-        return view('contacts.show', compact('contacts', 'companies')); 
+    
+        return view('contacts.show', compact('contacts')); 
     }
 
     public function destroy($id)
@@ -63,13 +63,15 @@ class ContactController extends Controller
 
     public function update(Request $request, $id)
     {
-        $contacts = Company::find($id);
+        $contacts = Contact::find($id);
         $contacts->first_name = $request->input('first_name');
         $contacts->last_name = $request->input('last_name');
         $contacts->phone  = $request->input('phone');
         $contacts->address = $request->input('address');
         $contacts->email = $request->input('email');
         $contacts->update();
+
+        
         
         return redirect()->route('contacts.index')->with('success','Contact updated Successfully');
     }

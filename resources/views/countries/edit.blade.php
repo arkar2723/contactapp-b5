@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.sb')
 @section('title', 'Edit Country')
 @section('content')
 <main class="py-5">

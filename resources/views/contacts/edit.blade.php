@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.sb')
 @section('title', 'Edit Contact')
 @section('content')
 <main class="py-5">

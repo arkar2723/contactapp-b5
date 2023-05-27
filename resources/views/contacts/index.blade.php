@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.sb')
 @section('title', 'Contact')
 @section('content')
 
@@ -42,7 +42,8 @@ div.dt-buttons {
                   <div class="d-flex align-items-center">
                     <h2 class="mb-0">All Contacts</h2>
                     <div class="ml-auto">
-                      <a href="{{route('contacts.create')}}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add New</a>                  </div>
+                      <a href="{{route('contacts.create')}}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add New</a>                  
+                    </div>
                 </div>
 </div>
 </div>
@@ -61,8 +62,8 @@ div.dt-buttons {
                       <th scope="col">Actions</th>
                     </tr>
                   </thead>
-                  <tbody>
 
+                  <tbody>
                   @if ($contacts->count())
                   @foreach ($contacts as $index => $contact)
                     <tr>
@@ -70,8 +71,8 @@ div.dt-buttons {
                       <td>{{$contact->first_name}}</td>
                       <td>{{$contact->last_name}}</td>
                       <td>{{$contact->email}}</td>
-                      <td>{{$contact->company->name}}</td>
-                      <td>{{$contact->country->countryName}}</td>
+                      <td>{{$contact->company->name??''}}</td>
+                      <td>{{$contact->country->countryName??''}}</td>
                       <td width="150">
                         <a href="{{route('contacts.show', $contact->id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
                         <a href="{{route('contacts.edit', $contact->id)}}" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>
@@ -80,8 +81,8 @@ div.dt-buttons {
                     </tr>
                     @endforeach
                     @endif
-
                   </tbody>
+
                 </table> 
 
             
